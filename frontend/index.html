@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Calculator Page -->
+    <section id="calculator">
+        <header>
+            <h1>Calculator</h1>
+            <h4>Allowed operations: + - / *</h4>
+            <h4>Negative numbers and division by zero operations forbidden</h4>
+        </header>
+        <input type="text" id="expression" placeholder="Enter the expression to calculate">
+        <div class="calculator-buttons">
+            <div>
+                <button onclick="submitCalculation()">Calculate</button>
+            </div>
+            <div>
+                <button id="reload-operations-status" onclick="updateResults()">Update Results</button>
+            </div>
+            <div>
+                <button id="clear-all-calculations" onclick="clearAllCalculationsAndUpdate()">Clear All Calculations</button>
+            </div>
+        </div>
+        <div id="calculation-results">
+            <!-- Calculation results will be appended here -->
+        </div>
+    </section>
+
+    <!-- Calculation Settings Page -->
+    <section id="calculation-settings">
+        <header>
+            <h1>Calculation Settings</h1>
+            <h4>Time is represented in SECONDS</h4>
+        </header>
+        <div>
+            <label for="plus-time">Operation execution time for addition (+):</label>
+            <input type="number" id="plus-time" value="5" min="0">
+            
+            <label for="minus-time">Operation execution time for subtraction (-):</label>
+            <input type="number" id="minus-time" value="5" min="0">
+            
+            <label for="multiply-time">Operation execution time for multiplication (*):</label>
+            <input type="number" id="multiply-time" value="5" min="0">
+            
+            <label for="divide-time">Operation execution time for division (/):</label>
+            <input type="number" id="divide-time" value="5" min="0">
+
+            <label for="inactive-server-time">Inactive server time:</label>
+            <input type="number" id="inactive-server-time" value="60" min="0">
+            
+            <button onclick="saveSettings()">Apply</button>
+        </div>
+    </section>
+
+    <!-- Computing Resources Page -->
+    <section id="computing-resources">
+        <header>
+            <h1>Computing Resources</h1>
+        </header>
+        <button id="reload-server-status">Reload Server Status</button>
+        <div id="server-statuses">
+            <!-- Server statuses will be loaded here -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
